@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 const API_URL = import.meta.env.VITE_API_URL;
 // Main App component that encapsulates the entire application.
 // All components and logic are kept within this single file as per the design requirements.
