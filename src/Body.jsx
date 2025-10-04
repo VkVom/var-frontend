@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
+
 // Main App component that encapsulates the entire application.
 // All components and logic are kept within this single file as per the design requirements.
 export default function App() {
@@ -34,9 +35,9 @@ export default function App() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // This URL points to the backend server you will create.
-const response = await fetch(`${API_URL}/api/send`, {
-          method: 'POST',
+      // This URL now uses the environment variable
+      const response = await fetch(`${API_URL}/api/send`, { 
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -375,8 +376,8 @@ const response = await fetch(`${API_URL}/api/send`, {
           <div className={`flex items-center justify-between p-1 border-b-2 cursor-move ${themeClasses.titleBar}`}>
             <span className="text-white font-bold tracking-wider text-xs pl-1 flex items-center gap-1.5 font-pixel">{tab.svg}{tab.title}</span>
             <div className="flex gap-0.5">
-               <button className={`h-4 w-4 border-2 flex justify-center items-center text-xs font-bold ${themeClasses.titleBarButton} shadow-none`}>☐</button>
-               <button className={`h-4 w-4 border-2 flex justify-center items-center text-xs font-bold ${themeClasses.titleBarButton} shadow-none`}>X</button>
+                <button className={`h-4 w-4 border-2 flex justify-center items-center text-xs font-bold ${themeClasses.titleBarButton} shadow-none`}>☐</button>
+                <button className={`h-4 w-4 border-2 flex justify-center items-center text-xs font-bold ${themeClasses.titleBarButton} shadow-none`}>X</button>
             </div>
           </div>
           {tab.component && <div className="w-full h-40 mt-1">{tab.component}</div>}
@@ -447,4 +448,3 @@ const response = await fetch(`${API_URL}/api/send`, {
     </div>
   );
 }
-
