@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-// Main Body component that encapsulates the entire Bodylication.
+// Main App component that encapsulates the entire application.
 // All components and logic are kept within this single file as per the design requirements.
 export default function Body() {
 
@@ -39,7 +39,7 @@ export default function Body() {
       const response = await fetch(`${API_URL}/api/send`, { 
         method: 'POST',
         headers: {
-          'Content-Type': 'Bodylication/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
@@ -83,7 +83,7 @@ export default function Body() {
           setGsapReady(true);
         }
       };
-      document.body.BodyendChild(script);
+      document.body.appendChild(script);
     });
   }, []);
 
