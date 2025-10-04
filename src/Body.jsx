@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-// Main App component that encapsulates the entire application.
+// Main Body component that encapsulates the entire Bodylication.
 // All components and logic are kept within this single file as per the design requirements.
-export default function App() {
+export default function Body() {
 
   // State for theme management (false = light mode, true = dark mode)
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -35,11 +35,11 @@ export default function App() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // This URL now uses the environment variable
+      // CORRECTED: This now uses the API_URL environment variable
       const response = await fetch(`${API_URL}/api/send`, { 
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'Bodylication/json',
         },
         body: JSON.stringify(data),
       });
@@ -83,7 +83,7 @@ export default function App() {
           setGsapReady(true);
         }
       };
-      document.body.appendChild(script);
+      document.body.BodyendChild(script);
     });
   }, []);
 
